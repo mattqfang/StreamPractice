@@ -10,26 +10,26 @@ import org.junit.Test;
 
 public class StreamerTest {
 	private Streamer streamer;
-	
+
 	@Before
 	public void setUp() {
 		streamer = new Streamer();
 	}
-	
+
 	@Test
 	public void testGetMax() {
 		List<Integer> data = Arrays.asList(1, 3, 8, 4, 6);
 		int max = streamer.getMax(data);
 		assertEquals(8, max);
 	}
-	
+
 	@Test
 	public void testGetMin() {
 		List<Integer> data = Arrays.asList(1, 3, 8, 4, 6);
 		int min = streamer.getMin(data);
 		assertEquals(1, min);
 	}
-	
+
 	@Test
 	public void testCountWithCondition() {
 		List<Integer> data = Arrays.asList(1, 3, 8, 4, 6);
