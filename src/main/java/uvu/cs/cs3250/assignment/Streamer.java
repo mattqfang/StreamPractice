@@ -1,6 +1,7 @@
 package uvu.cs.cs3250.assignment;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Streamer {
 	public int getMin(List<Integer> data) {
@@ -17,10 +18,10 @@ public class Streamer {
 				.get(); 
 	}
 
-	public int count(List<Integer> data, Condition condition) {
+	public int count(List<Integer> data, Predicate<Integer> condition) {
 		return (int)data
 				.stream()
-				.filter(x -> condition.isValid(x))
+				.filter(condition)
 				.count();
 	}
 }
