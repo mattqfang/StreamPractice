@@ -5,13 +5,13 @@ package uvu.cs.cs3250.assignment;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
 
 // Using "Stream" to implement the functionalities in "Streamer" class so as to pass the unit tests.
 
 public class Streamer {
 
     public Streamer() {
-        
     }
 
     public int getMax(List<Integer> list) {
@@ -28,8 +28,9 @@ public class Streamer {
             .get();
     }
 
-    public int count(List<Integer> list, boolean checker) {
-        return 0;
-    }
+    public int count(List<Integer> list, Function<Integer, Boolean> x) {
+        return list.stream().parallel()
+            .reduce(Function.identity().equals(true));
+        }
 
 }
