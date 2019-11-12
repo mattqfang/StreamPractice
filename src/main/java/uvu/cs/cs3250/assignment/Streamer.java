@@ -5,7 +5,7 @@ package uvu.cs.cs3250.assignment;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Function;
+import java.util.function.Predicate;
 
 // Using "Stream" to implement the functionalities in "Streamer" class so as to pass the unit tests.
 
@@ -28,9 +28,9 @@ public class Streamer {
             .get();
     }
 
-    public int count(List<Integer> list, Function<Integer, Boolean> x) {
-        return list.stream().parallel()
-            .reduce(Function.identity().equals(true));
+    public int count(List<Integer> list, Predicate<? super Integer> x) {
+        return (int) list.stream().parallel().
+            filter(x).count();
         }
 
 }
