@@ -3,8 +3,33 @@
 
 package uvu.cs.cs3250.assignment;
 
+import java.util.Comparator;
+import java.util.List;
+
 // Using "Stream" to implement the functionalities in "Streamer" class so as to pass the unit tests.
 
 public class Streamer {
+
+    public Streamer() {
+        
+    }
+
+    public int getMax(List<Integer> list) {
+        return list.stream().parallel()
+            .sorted(Comparator.reverseOrder())
+            .findFirst()
+            .get();
+    }
+
+    public int getMin(List<Integer> list) {
+        return list.stream().parallel()
+            .sorted(Comparator.naturalOrder())
+            .findFirst()
+            .get();
+    }
+
+    public int count(List<Integer> list, boolean checker) {
+        return 0;
+    }
 
 }
