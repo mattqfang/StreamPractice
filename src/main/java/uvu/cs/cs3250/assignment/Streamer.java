@@ -11,26 +11,22 @@ import java.util.function.Predicate;
 
 public class Streamer {
 
-    public Streamer() {
-    }
-
     public int getMax(List<Integer> list) {
         return list.stream().parallel()
-            .sorted(Comparator.reverseOrder())
-            .findFirst()
+            .max(Comparator.naturalOrder()) // max after comparing everything in order
             .get();
     }
 
     public int getMin(List<Integer> list) {
         return list.stream().parallel()
-            .sorted(Comparator.naturalOrder())
-            .findFirst()
+            .min(Comparator.naturalOrder()) // min after comparing everything in order
             .get();
     }
 
-    public int count(List<Integer> list, Predicate<? super Integer> x) {
-        return (int) list.stream().parallel().
-            filter(x).count();
+    public int count(List<Integer> list, Predicate<? super Integer> predicate) {
+        return (int) list.stream().parallel() // count returns long. cast to int
+            .filter(predicate) // filter list based on results of predicate
+            .count(); 
         }
 
 }
