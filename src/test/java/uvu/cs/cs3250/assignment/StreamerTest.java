@@ -33,7 +33,7 @@ public class StreamerTest {
 	@Test
 	public void testCountWithCondition() {
 		List<Integer> data = Arrays.asList(1, 3, 8, 4, 6);
-		int count = streamer.count(data, x -> x % 3 == 0);
+		long count = streamer.count(data, x -> x % 3 == 0);
 		assertEquals(2, count);
 	}
 }
