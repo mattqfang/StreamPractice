@@ -1,17 +1,19 @@
 package uvu.cs.cs3250.assignment;
 
 import java.util.List;
+import java.util.function.Predicate;
 
-public class Streamer {
+class Streamer {
 
-    public int getMax(List<Integer> data) {
+    int getMax(List<Integer> data) {
         return data.stream().max(Integer::compare).get();
     }
 
-    public int getMin(List<Integer> data) {
+    int getMin(List<Integer> data) {
         return data.stream().min(Integer::compare).get();
     }
 
-    public int count(List<Integer> data, int total) {
+    int count(List<Integer> data, Predicate<Integer> lambda) {
+        return (int) data.stream().filter(lambda).count();
     }
 }
