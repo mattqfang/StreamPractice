@@ -1,5 +1,31 @@
 package uvu.cs.cs3250.assignment;
 
-public class Streamer {
+import java.util.List;
+import java.util.function.Predicate;
 
+public class Streamer 
+{
+	// Gets the max of a passed in list
+	public int getMax(List<Integer> data)
+	{
+		return data.stream()
+				.max(Integer::compare)
+				.get();
+	}
+
+	// Gets the min of a passed in list
+	public int getMin(List<Integer> data)
+	{
+		return data.stream()
+				.min(Integer::compare)
+				.get();
+	}
+
+	// Counts the list filtered by the passed in lambda
+	public int count(List<Integer> data, Predicate<Integer> filter)
+	{
+		return (int)data.stream()
+				.filter(filter)
+				.count();
+	}
 }
