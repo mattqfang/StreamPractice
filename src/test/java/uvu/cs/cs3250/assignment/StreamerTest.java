@@ -1,12 +1,12 @@
 package uvu.cs.cs3250.assignment;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 public class StreamerTest {
 	private Streamer streamer;
@@ -29,7 +29,7 @@ public class StreamerTest {
 		int min = streamer.getMin(data);
 		assertEquals(1, min);
 	}
-	
+
 	@Test
 	public void testCountWithCondition() {
 		List<Integer> data = Arrays.asList(1, 3, 8, 4, 6);
