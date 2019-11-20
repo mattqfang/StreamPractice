@@ -24,8 +24,8 @@ public class Streamer
 	// Counts the list filtered by the passed in lambda
 	public int count(List<Integer> data, Predicate<Integer> filter)
 	{
-		return (int)data.stream()
-				.filter(filter)
+		return (int)data.stream() // Have to cast as an int because count returns a long
+				.filter(filter) // Filter using the passed in predicate
 				.count();
 	}
 }
